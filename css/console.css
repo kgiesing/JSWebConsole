@@ -1,0 +1,65 @@
+/* Table-like layout */
+body {
+	display: table;
+	height: 100%;
+	width: 99%;
+}
+/* Code section */
+#jsCode {
+    border: 1px solid #c0c0c0;
+    height: 100%;
+	min-height: 8em;
+    width: 100%;
+}
+/* "Fine print" */
+.fine-print {
+    font-size: small;
+    font-style: italic;
+}
+/* Console section */
+#jsConsole {
+    border: 1px solid #000000;
+	height: 20%;
+	min-height: 8em;
+    overflow: auto;
+    width: 100%;
+}
+/* Console messages */
+#jsConsole pre {
+    margin-left: 20px;
+}
+/* Default console class */
+.console {
+    background-color: #000000;
+    color: #c0c0c0;
+}
+/* Debug messages */
+#jsConsole .debug {
+}
+/* Error messages */
+#jsConsole .error {
+    background-image: url('../img/error.png');
+    background-repeat: no-repeat;
+    margin-left: -20px;
+    padding-left: 20px;
+    color: #FF6666;
+}
+/* Eval messages */
+#jsConsole .eval {
+    font-style: italic;
+    font-weight: bold;
+}
+/* Info messages */
+#jsConsole .info {
+}
+/* Log messages */
+#jsConsole .log {
+}
+/* Warning messages */
+#jsConsole .warning {
+    background-image: url('../img/warning.png');
+    background-repeat: no-repeat;
+    margin-left: -20px;
+    padding-left: 20px;
+    color: #FFFF66;
+}
