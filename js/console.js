@@ -1,16 +1,16 @@
 // Function to add event listeners
-function addWindowEvent(type, fn) {
-    if (window.addEventListener) {
-        window.addEventListener(type, fn, false);
+function addDomEvent(obj, type, fn) {
+    if (obj.addEventListener) {
+        obj.addEventListener(type, fn, false);
     } else if (window.attachEvent) {
-        window.attachEvent('on' + type, fn);
+        obj.attachEvent('on' + type, fn);
     } else {
-        window['on' + type] = fn;
+        obj['on' + type] = fn;
     }
 }
 
 // Execute entry point on page load
-addWindowEvent('load', main);
+addDomEvent(window, 'load', main);
 
 // Entry point
 function main() {
@@ -84,7 +84,7 @@ function main() {
         if (e.keyCode == 13 && e.ctrlKey)
             execute();
     }
-    addWindowEvent('keyup', ctrlEnter);
+    addDomEvent(window, 'keyup', ctrlEnter);
 
     // Set up the editor and theme
     editor.getSession().setMode("ace/mode/javascript");
