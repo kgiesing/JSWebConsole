@@ -84,13 +84,7 @@ function main() {
         if (e.keyCode == 13 && e.ctrlKey)
             execute();
     }
-    if (window.addEventListener) {
-        window.addEventListener('keyup', ctrlEnter, false);
-    } else if (window.attachEvent) {
-        window.attachEvent('onkeyup', ctrlEnter);
-    } else {
-        window.onkeyup = ctrlEnter;
-    }
+    addWindowEvent('keyup', ctrlEnter);
 
     // Set up the editor and theme
     editor.getSession().setMode("ace/mode/javascript");
