@@ -15,10 +15,46 @@ body {
 	min-height: 8em;
     width: 100%;
 }
+/* "Execute" button */
+#jsExecute {
+    margin-right: 1em;
+}
 /* "Fine print" */
 .fine-print {
     font-size: small;
     font-style: italic;
+}
+/* Iconified Text */
+.iconify {
+    /* Background gradient */
+    background: -webkit-linear-gradient(#000, #666, #333); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#333, #000, #333); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#333, #000, #333); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#666, #000, #333);
+    border: 1px solid #666;
+    border-radius: 0.6em;
+    float: right;
+    height: 1.12em;
+    margin: 2px;
+    text-align: center;
+    vertical-align: top;
+    width: 1.12em;
+}
+/* Help and settings sections */
+#helpContent, #settingsContent {
+    background-color: #333;
+    border: 2px solid;
+    display: none;
+    padding: 1em;
+    position: fixed;
+    top: 0.5em;
+    left: 0.5em;
+    width: 50%;
+    z-index: 999;
+}
+#settingsContent label {
+    display: inline-block;
+    min-width: 8em;
 }
 /* Console section */
 #jsConsole {

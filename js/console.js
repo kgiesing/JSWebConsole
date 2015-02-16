@@ -21,6 +21,8 @@ function main() {
     // DOM object variables
     var jsConsole = document.getElementById("jsConsole"),
         jsExecute = document.getElementById("jsExecute"),
+        helpContent = document.getElementById("helpContent"),
+        settingsContent = document.getElementById("settingsContent"),
         iframe = null,
         iWindow = null;
     // Editor variables
@@ -34,7 +36,7 @@ function main() {
         autoPair: false
     }
 
-    // Set the page theme - in function in case I allow changes via HTML
+    // Set the page theme
     function setTheme() {
         if (!editor)
             return;
@@ -50,6 +52,20 @@ function main() {
         jsConsole.className = consoleClass;
         document.body.className = consoleClass;
     }
+
+    // Save theme settings
+    addDomEvent(document.getElementById("settingsSave"), "click", function() {
+        var fontSelect = document.getElementById("fontSize");
+        theme.fontSize = parseInt(fontSelect.options[fontSelect.selectedIndex].text);
+        theme.highlightLine = document.getElementById("highlightLine").checked;
+        theme.highlightWord = document.getElementById("highlightWord").checked;
+        theme.showFold = document.getElementById("showFold").checked;
+        theme.autoPair = document.getElementById("autoPair").checked;
+        setTheme();
+        settingsContent.style.display = "none";
+        return false;
+    });
+
 
     // Sandbox code using invisible <iframe>
     iframe = document.createElement("iframe");
@@ -80,11 +96,26 @@ function main() {
     jsExecute.onclick = execute;
 
     // Also execute code on Ctrl-Enter
-    function ctrlEnter(e) {
+    addDomEvent(window, 'keyup', function(e) {
         if (e.keyCode == 13 && e.ctrlKey)
             execute();
-    }
-    addDomEvent(window, 'keyup', ctrlEnter);
+    });
+
+    // Show/hide help and settings
+    addDomEvent(document.getElementById("help"), 'click', function() {
+        helpContent.style.display = (helpContent.style.display == "block" ? "none" : "block");
+        settingsContent.style.display = "none";
+    });
+    addDomEvent(document.getElementById("settings"), 'click', function() {
+        helpContent.style.display = "none";
+        settingsContent.style.display = (settingsContent.style.display == "block" ? "none" : "block");
+    });
+    addDomEvent(document.getElementById("helpClose"), 'click', function() {
+        helpContent.style.display = "none";
+    });
+    addDomEvent(document.getElementById("settingsClose"), 'click', function() {
+        settingsContent.style.display = "none";
+    });
 
     // Set up the editor and theme
     editor.getSession().setMode("ace/mode/javascript");
