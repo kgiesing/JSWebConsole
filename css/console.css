@@ -26,14 +26,12 @@ body {
 }
 /* Iconified Text */
 .iconify {
-    /* Background gradient */
-    background: -webkit-linear-gradient(#000, #666, #333); /* Safari 5.1 - 6.0 */
-    background: -o-linear-gradient(#333, #000, #333); /* Opera 11.1 - 12.0 */
-    background: -moz-linear-gradient(#333, #000, #333); /* Firefox 3.6 - 15 */
-    background: linear-gradient(#666, #000, #333);
-    border: 1px solid #666;
-    border-radius: 0.6em;
+    border: 2px solid;
+    border-radius: 0.5em;
+    box-shadow: 1px 2px 3px 1px #999 inset;
+    cursor: pointer;
     float: right;
+    font-weight: bold;
     height: 1.12em;
     margin: 2px;
     text-align: center;
@@ -42,7 +40,6 @@ body {
 }
 /* Help and settings sections */
 #helpContent, #settingsContent {
-    background-color: #333;
     border: 2px solid;
     display: none;
     padding: 1em;

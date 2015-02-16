@@ -48,14 +48,18 @@ function main() {
         editor.setTheme("ace/theme/" + theme.name);
 
         // Other HTML elements share the editor's theme
-        consoleClass = "ace-" + theme.name;
+        consoleClass = "ace-" + theme.name.replace("_", "-");
         jsConsole.className = consoleClass;
         document.body.className = consoleClass;
+        helpContent.className = consoleClass;
+        settingsContent.className = consoleClass;
     }
 
     // Save theme settings
     addDomEvent(document.getElementById("settingsSave"), "click", function() {
-        var fontSelect = document.getElementById("fontSize");
+        var themeSelect = document.getElementById("themeSelect"),
+            fontSelect = document.getElementById("fontSize");
+        theme.name = themeSelect.options[themeSelect.selectedIndex].value;
         theme.fontSize = parseInt(fontSelect.options[fontSelect.selectedIndex].text);
         theme.highlightLine = document.getElementById("highlightLine").checked;
         theme.highlightWord = document.getElementById("highlightWord").checked;
