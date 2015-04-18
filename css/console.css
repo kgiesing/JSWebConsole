@@ -7,14 +7,28 @@ html {
 body {
     height: 97%;
     width: 99%;
+    /* CSS3 */
+    height: 97vh;
 }
 /* Code section */
 #jsCode {
     border: 1px solid #c0c0c0;
     height: 70%;
-    height: 70vh; /* CSS3 */
     min-height: 8em;
     width: 100%;
+    /* CSS3 */
+    height: 70vh;
+}
+/* Constrols section */
+#jsControls {
+    vertical-align: middle;
+    height: 5%;
+    min-height: 1em;
+    padding-top: 1%;
+    width: 100%;
+    /* CSS3 */
+    height: 5vh;
+    padding-top: 1vh;
 }
 /* "Execute" button */
 #jsExecute {
@@ -27,17 +41,18 @@ body {
 }
 /* Iconified Text */
 .iconify {
-    border: 2px solid;
     border-radius: 0.5em;
     box-shadow: 1px 2px 3px 1px #999 inset;
     cursor: pointer;
+    display: table;
     float: right;
+    font-family: "Segoe UI Symbol", "DejaVu Sans Mono", sans-serif;
     font-weight: bold;
-    height: 1.12em;
     margin: 2px;
+    padding-top: 1px;
     text-align: center;
     vertical-align: top;
-    width: 1.12em;
+    width: 1.4em;
 }
 /* Help and settings sections */
 #helpContent, #settingsContent {
