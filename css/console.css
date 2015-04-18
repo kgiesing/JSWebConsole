@@ -1,18 +1,19 @@
 /* Table-like layout */
 html {
-  margin: 0px;
-  height: 100%;
-  width: 100%;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
 }
 body {
-	height: 97%;
-	width: 99%;
+    height: 97%;
+    width: 99%;
 }
 /* Code section */
 #jsCode {
     border: 1px solid #c0c0c0;
     height: 70%;
-	min-height: 8em;
+    height: 70vh; /* CSS3 */
+    min-height: 8em;
     width: 100%;
 }
 /* "Execute" button */
@@ -56,8 +57,9 @@ body {
 /* Console section */
 #jsConsole {
     border: 1px solid #000000;
-	height: 20%;
-	min-height: 8em;
+    height: 20%;
+    height: 20vh; /* CSS3 */
+    min-height: 8em;
     overflow: auto;
     width: 100%;
 }
