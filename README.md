@@ -9,5 +9,3 @@ risks.
 
 JavaScript editing and code styling is provided by the Ace code editor:
 http://ace.c9.io/
-
-Currently, the only theme that is supported is Monokai, but this may change.
